@@ -35,14 +35,6 @@ interface FilterSidebarProps {
   totalResults: number;
 }
 
-const skills = [
-  "UI/UX Design",
-  "Web Development",
-  "Graphic Design",
-  "Marketing",
-  "Writing",
-];
-
 export default function FilterSidebar({
   filters,
   onFiltersChange,
