@@ -34,4 +34,23 @@ Setup:
   Tailwind CSS
   Lucide React (icons)
   Shadcn/ui components (Button, Input, Card, etc.)
-  
+7-Implementation Notes
+  The application features:
+   1-Search & Filtering:
+     Real-time search across name, role, and skills
+     Multi-criteria filtering with budget ranges
+     Category and skill-based filtering
+   2-Sorting & Pagination:
+     Sort by rating (high/low) and price (high/low)
+     8 items per page with navigation controls
+
+   3-UI Components:
+     Responsive card layout for freelancers
+     Interactive carousel with smooth scrolling
+     Mobile-optimized filter drawer
+     Consistent design system with Tailwind
+
+   4-Performance:
+     Memoized filtered results
+     Dynamic component loading
+     Efficient state updates
