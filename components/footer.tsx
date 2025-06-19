@@ -135,7 +135,7 @@ export default function Footer() {
         <div className="mt-12 pt-8 border-t border-gray-200">
           <div className="flex flex-col lg:flex-row items-center justify-between space-y-4 lg:space-y-0">
             {/* Logo and Copyright */}
-            <div className="flex items-center space-x-4">
+            <div className="flex flex-col items-center space-x-4 md:flex-row">
               <div className="flex items-center">
                 <div className="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center">
                   <span className="text-white font-bold text-lg">F</span>
