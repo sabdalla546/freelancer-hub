@@ -18,7 +18,7 @@ export default function Home() {
     deliveryTime: "Any Time",
     location: "",
     sortBy: "rating_high",
-    skills: "All Skills", // Matches updated FilterState
+    skills: "All Skills",
   });
 
   const filteredFreelancers = useMemo(() => {
@@ -66,7 +66,9 @@ export default function Home() {
       // Skills filter
       const matchesSkills =
         filters.skills === "All Skills" ||
-        freelancer.skills.includes(filters.skills);
+        freelancer.skills.some((skill) =>
+          skill.toLowerCase().includes(filters.skills.toLowerCase())
+        );
 
       return (
         matchesSearch &&

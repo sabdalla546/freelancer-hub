@@ -3,7 +3,10 @@
 import { ArrowRight, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { sortOptions as importedSortOptions } from "@/data/freelancers";
+import {
+  freelancers,
+  sortOptions as importedSortOptions,
+} from "@/data/freelancers";
 
 import {
   Select,
@@ -13,7 +16,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { categories, deliveryTimes } from "@/data/freelancers";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 interface FilterState {
   searchQuery: string;
@@ -46,7 +49,16 @@ export default function FilterSidebar({
   totalResults,
 }: FilterSidebarProps) {
   const [showMobileFilters, setShowMobileFilters] = useState(false);
+  const [allSkills, setAllSkills] = useState<string[]>([]);
 
+  useEffect(() => {
+    // Extract unique skills from freelancers data
+    const skillsSet = new Set<string>();
+    freelancers.forEach((freelancer) => {
+      freelancer.skills.forEach((skill) => skillsSet.add(skill));
+    });
+    setAllSkills(Array.from(skillsSet).sort());
+  }, []);
   const updateFilter = (key: keyof FilterState, value: string | number) => {
     onFiltersChange({
       ...filters,
@@ -140,7 +152,7 @@ export default function FilterSidebar({
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="All Skills">All Skills</SelectItem>
-                {skills.map((skill) => (
+                {allSkills.map((skill) => (
                   <SelectItem key={skill} value={skill}>
                     {skill}
                   </SelectItem>
@@ -253,7 +265,7 @@ export default function FilterSidebar({
             </SelectTrigger>
             <SelectContent>
               <SelectItem value="All Skills">All Skills</SelectItem>
-              {skills.map((skill) => (
+              {allSkills.map((skill) => (
                 <SelectItem key={skill} value={skill}>
                   {skill}
                 </SelectItem>
