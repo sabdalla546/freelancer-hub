@@ -1,18 +1,12 @@
+/* eslint-disable prefer-const */
 "use client";
 
 import { useState, useMemo } from "react";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import FreelancerCard from "./freelancerCard";
 import { Freelancer, FilterState } from "@/types/freelancer";
-import { sortOptions } from "@/data/freelancers";
 
 interface FreelancerGridProps {
   freelancers: Freelancer[];
