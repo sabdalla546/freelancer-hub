@@ -100,7 +100,7 @@ export const freelancers: Freelancer[] = [
     reviewCount: 95,
     price: 35.0,
     image:
-      "https://images.pexels.com/photos/3785075/pexels-photo-3785075.jpeg?auto=compress&cs=tinysrgb&w=400",
+      "https://i.pinimg.com/736x/b5/84/9b/b5849bd66d4231622a9bf44bbd90c591.jpg",
     category: "Video & Animation",
     deliveryTime: 4,
     location: "Canada",
